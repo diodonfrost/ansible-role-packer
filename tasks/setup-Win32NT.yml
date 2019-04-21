@@ -1,0 +1,45 @@
+---
+# tasks file for install packer on Windows system
+
+- name: Find all packer version for Windows
+  win_uri:
+    url: https://releases.hashicorp.com/packer/index.json
+    return_content: yes
+  register: packer_index
+
+- name: Find latest packer version when latest var is define
+  set_fact:
+    packer_version: "{{ item }}"
+  with_items: "{{ (packer_index.content | from_json).versions | list | sort | last }}"
+  when: packer_version == 'latest'
+
+- name: check if packer is present on Windows with the right version
+  win_shell: packer --version
+  register: packer_installed_version
+  ignore_errors: yes
+  changed_when: false
+  failed_when: false
+
+- name: Download hashicorp packer on Windows
+  win_get_url:
+    url: https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_windows_amd64.zip
+    dest: C:\tmp\packer_{{ packer_version }}_windows_amd64.zip
+  when:
+    - packer_version not in packer_installed_version.stdout
+
+- name: Create Packer folder on Windows
+  win_file:
+    path: "{{ packer_path }}"
+    state: directory
+
+- name: Install hashicorp packer on Windows
+  win_unzip:
+    src: C:\tmp\packer_{{ packer_version }}_windows_amd64.zip
+    dest: "{{ packer_path }}"
+    creates: "{{ packer_path }}packer.exe"
+  when:
+    - packer_version not in packer_installed_version.stdout
+
+- name: Add hashicorp packer to Windows PATH
+  win_path:
+    elements: "{{ packer_path }}"

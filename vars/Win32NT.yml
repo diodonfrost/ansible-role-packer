@@ -1,0 +1,3 @@
+---
+# vars file for Packer in Windows system
+packer_path: C:\HashiCorp\Packer\bin\
