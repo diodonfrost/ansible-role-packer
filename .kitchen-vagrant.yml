@@ -1,7 +1,7 @@
 ---
 # we use docker as plateform
 driver:
-  name: Vagrant
+  name: vagrant
 
 # Ansible will be our provisioner
 provisioner:
@@ -117,19 +117,19 @@ platforms:
 
 suites:
   # Test Packer-latest
-  - name: Packer-latest
+  - name: packer-latest
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/packer-latest.yml
 
   # Test Packer-1.2.5
-  - name: Packer-1.2.5
+  - name: packer-1.2.5
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/packer-1.2.5.yml
 
   # Test Packer-1.0.0
-  - name: Packer-1.0.0
+  - name: packer-1.0.0
     provisioner:
       name: ansible_playbook
       playbook: tests/playbooks/packer-1.0.0.yml
