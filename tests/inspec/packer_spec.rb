@@ -2,8 +2,9 @@
 
 packer_cmd = '/usr/local/bin/packer version'
 packer_cmd = 'packer --version' if os.family == 'windows'
+packer_cmd = 'packer --version' if os.family == 'darwin'
 
-control 'Packer-01' do
+control 'packer-01' do
   impact 1.0
   title 'Packer install'
   desc 'Packer should be functionnal'

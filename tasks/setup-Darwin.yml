@@ -1,0 +1,29 @@
+---
+# tasks file for install Packer on Mac osx system
+
+- name: Find all Packer version
+  uri:
+    url: https://releases.hashicorp.com/packer/index.json
+    return_content: yes
+  register: packer_index
+
+- name: Find latest packer version when latest var is define
+  set_fact:
+    packer_version: "{{ item }}"
+  with_items: "{{ (packer_index.content | from_json).versions | list | sort | last }}"
+  when: packer_version == 'latest'
+
+- name: check if packer is present with the right version
+  shell: "{{ packer_path }}/packer --version"
+  register: packer_installed_version
+  ignore_errors: yes
+  changed_when: false
+  failed_when: false
+
+- name: Install hashicorp packer on Mac osx
+  unarchive:
+    src: "https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_darwin_amd64.zip"
+    dest: "{{ packer_path }}"
+    remote_src: yes
+  when:
+    - packer_version not in packer_installed_version.stdout
