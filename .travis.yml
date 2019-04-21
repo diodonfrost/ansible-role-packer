@@ -152,18 +152,6 @@ env:
   - distribution: opensuse
     version: "42.3"
     playbook: packer-1.2.5
-  - distribution: opensuse
-    version: "42.2"
-    playbook: packer-latest
-  - distribution: opensuse
-    version: "42.2"
-    playbook: packer-1.2.5
-  - distribution: opensuse
-    version: "13.2"
-    playbook: packer-latest
-  - distribution: opensuse
-    version: "13.2"
-    playbook: packer-1.2.5
 
 #--------------------------------
 #
