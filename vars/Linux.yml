@@ -1,0 +1,3 @@
+---
+# vars file for Packer in Linux system
+packer_path: /usr/local/sbin/
