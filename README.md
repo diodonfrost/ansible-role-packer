@@ -122,8 +122,9 @@ This role can also install a specific version of packer.
 - hosts: localhost
   become: true
   roles:
-    - role: diodonfrost.packer
-      packer_version: 1.2.5
+    - { role: ansible-role-packer,
+        vagrant_version: 1.2.5
+      }
 
 ```
 

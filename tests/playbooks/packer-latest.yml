@@ -2,5 +2,7 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - role: ansible-role-packer
-      packer_version: latest
+  roles:
+    - { role: ansible-role-packer,
+        vagrant_version: latest
+      }
