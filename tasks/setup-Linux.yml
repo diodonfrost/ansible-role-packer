@@ -20,11 +20,7 @@
   changed_when: false
   failed_when: false
 
-- name: debug version
-  debug:
-    msg: "{{ packer_installed_version.stdout }}"
-
-- name: Install packer on Linux with hashicorp generic package
+- name: Install hashicorp packer on Linux
   unarchive:
     src: "https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_amd64.zip"
     dest: "{{ packer_path }}"
