@@ -1,0 +1,5 @@
+---
+- name: ansible-role-packer
+  hosts: windows-machines
+  roles:
+    - ansible-role-packer
