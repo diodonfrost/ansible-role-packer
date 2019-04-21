@@ -15,11 +15,17 @@ env:
     version: "7"
     playbook: packer-1.2.5
   - distribution: centos
+    version: "7"
+    playbook: packer-1.0.0
+  - distribution: centos
     version: "6"
     playbook: packer-latest
   - distribution: centos
     version: "6"
     playbook: packer-1.2.5
+  - distribution: centos
+    version: "6"
+    playbook: packer-1.0.0
 
 #--------------------------------
 #
@@ -33,11 +39,17 @@ env:
     version: "27"
     playbook: packer-1.2.5
   - distribution: fedora
+    version: "27"
+    playbook: packer-1.0.0
+  - distribution: fedora
     version: "26"
     playbook: packer-latest
   - distribution: fedora
     version: "26"
     playbook: packer-1.2.5
+  - distribution: fedora
+    version: "26"
+    playbook: packer-1.0.0
 
 #--------------------------------
 #
@@ -51,11 +63,17 @@ env:
     version: "19.04"
     playbook: packer-1.2.5
   - distribution: ubuntu
+    version: "19.04"
+    playbook: packer-1.0.0
+  - distribution: ubuntu
     version: "18.04"
     playbook: packer-latest
   - distribution: ubuntu
     version: "18.04"
     playbook: packer-1.2.5
+  - distribution: ubuntu
+    version: "18.04"
+    playbook: packer-1.0.0
   - distribution: ubuntu
     version: "16.04"
     playbook: packer-latest
@@ -63,17 +81,26 @@ env:
     version: "16.04"
     playbook: packer-1.2.5
   - distribution: ubuntu
+    version: "16.04"
+    playbook: packer-1.0.0
+  - distribution: ubuntu
     version: "14.04"
     playbook: packer-latest
   - distribution: ubuntu
     version: "14.04"
     playbook: packer-1.2.5
   - distribution: ubuntu
+    version: "14.04"
+    playbook: packer-1.0.0
+  - distribution: ubuntu
     version: "12.04"
     playbook: packer-latest
   - distribution: ubuntu
     version: "12.04"
     playbook: packer-1.2.5
+  - distribution: ubuntu
+    version: "12.04"
+    playbook: packer-1.0.0
 
 #--------------------------------
 #
@@ -87,11 +114,17 @@ env:
     version: "9"
     playbook: packer-1.2.5
   - distribution: debian
+    version: "9"
+    playbook: packer-1.0.0
+  - distribution: debian
     version: "8"
     playbook: packer-latest
   - distribution: debian
     version: "8"
     playbook: packer-1.2.5
+  - distribution: debian
+    version: "8"
+    playbook: packer-1.0.0
 
 #--------------------------------
 #
@@ -105,11 +138,17 @@ env:
     version: "7"
     playbook: packer-1.2.5
   - distribution: oraclelinux
+    version: "7"
+    playbook: packer-1.0.0
+  - distribution: oraclelinux
     version: "6"
     playbook: packer-latest
   - distribution: oraclelinux
     version: "6"
     playbook: packer-1.2.5
+  - distribution: oraclelinux
+    version: "6"
+    playbook: packer-1.0.0
 
 #--------------------------------
 #
@@ -123,11 +162,17 @@ env:
     version: "2"
     playbook: packer-1.2.5
   - distribution: amazonlinux
+    version: "2"
+    playbook: packer-1.0.0
+  - distribution: amazonlinux
     version: "1"
     playbook: packer-latest
   - distribution: amazonlinux
     version: "1"
     playbook: packer-1.2.5
+  - distribution: amazonlinux
+    version: "1"
+    playbook: packer-1.0.0
 
 #--------------------------------
 #
@@ -141,17 +186,26 @@ env:
     version: "15.1"
     playbook: packer-1.2.5
   - distribution: opensuse
+    version: "15.1"
+    playbook: packer-1.0.0
+  - distribution: opensuse
     version: "15"
     playbook: packer-latest
   - distribution: opensuse
     version: "15"
     playbook: packer-1.2.5
   - distribution: opensuse
+    version: "15"
+    playbook: packer-1.0.0
+  - distribution: opensuse
     version: "42.3"
     playbook: packer-latest
   - distribution: opensuse
     version: "42.3"
     playbook: packer-1.2.5
+  - distribution: opensuse
+    version: "42.3"
+    playbook: packer-1.0.0
 
 #--------------------------------
 #
@@ -164,6 +218,9 @@ env:
   - distribution: archlinux
     version: "rolling"
     playbook: packer-1.2.5
+  - distribution: archlinux
+    version: "rolling"
+    playbook: packer-1.0.0
 
 #--------------------------------
 #
@@ -176,6 +233,9 @@ env:
   - distribution: alpine
     version: "rolling"
     playbook: packer-1.2.5
+  - distribution: alpine
+    version: "rolling"
+    playbook: packer-1.0.0
 
 before_install:
   # Build docker container
