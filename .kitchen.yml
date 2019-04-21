@@ -176,19 +176,19 @@ platforms:
 
 suites:
   # Test Packer-latest
-  - name: Packer-latest
+  - name: packer-latest
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/Packer-latest.yml
+      playbook: tests/playbooks/packer-latest.yml
 
-  # Test Packer-2.1.0
-  - name: Packer-2.1.0
+  # Test Packer-1.2.5
+  - name: packer-1.2.5
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/Packer-1.2.5.yml
+      playbook: tests/playbooks/packer-1.2.5.yml
 
-  # Test Packer-1.8.0
-  - name: Packer-1.8.0
+  # Test Packer-1.0.0
+  - name: packer-1.0.0
     provisioner:
       name: ansible_playbook
-      playbook: tests/playbooks/Packer-1.0.0.yml
+      playbook: tests/playbooks/packer-1.0.0.yml
