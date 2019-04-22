@@ -237,6 +237,21 @@ env:
     version: "rolling"
     playbook: packer-1.0.0
 
+#--------------------------------
+#
+# Gentoo
+#
+#--------------------------------
+  - distribution: gentoo
+    version: "stage3"
+    playbook: packer-latest
+  - distribution: gentoo
+    version: "stage3"
+    playbook: packer-1.2.5
+  - distribution: gentoo
+    version: "stage3"
+    playbook: packer-1.0.0
+
 before_install:
   # Build docker container
   - 'sudo docker pull diodonfrost/${distribution}-${version}-ansible:latest'
