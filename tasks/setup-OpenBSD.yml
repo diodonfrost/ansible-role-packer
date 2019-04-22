@@ -20,7 +20,7 @@
   changed_when: false
   failed_when: false
 
-- name: Install hashicorp packer on OpenBSD
+- name: Install packer on OpenBSD
   unarchive:
     src: "https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_openbsd_amd64.zip"
     dest: "{{ packer_path }}"

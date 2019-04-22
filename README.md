@@ -93,7 +93,7 @@ This role has multiple variables. The defaults for all these variables are the f
 ---
 # defaults file for ansible-role-packer
 
-# Define packer version to install
+# Define Packer version to install
 # Possible values: https://releases.hashicorp.com/packer/index.json
 # Default: latest
 packer_version: latest

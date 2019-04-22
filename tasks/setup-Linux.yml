@@ -20,7 +20,7 @@
   changed_when: false
   failed_when: false
 
-- name: Install hashicorp packer on Linux
+- name: Install packer on Linux
   unarchive:
     src: "https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_amd64.zip"
     dest: "{{ packer_path }}"
