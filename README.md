@@ -123,7 +123,7 @@ This role can also install a specific version of packer.
   become: true
   roles:
     - { role: ansible-role-packer,
-        vagrant_version: 1.2.5
+        packer_version: 1.2.5
       }
 
 ```
