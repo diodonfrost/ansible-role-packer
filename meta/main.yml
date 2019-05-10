@@ -69,5 +69,9 @@ galaxy_info:
   galaxy_tags:
     - system
     - packaging
+    - build
+    - box
+    - packer
+    - hashicorp
 
 dependencies: []
