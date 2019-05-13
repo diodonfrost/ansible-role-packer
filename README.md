@@ -19,6 +19,8 @@ Supported platforms:
     - 6
 - name: Fedora
   versions:
+    - 31
+    - 30
     - 29
     - 28
     - 27
@@ -122,9 +124,9 @@ This role can also install a specific version of packer.
 - hosts: localhost
   become: true
   roles:
-    - { role: ansible-role-packer,
+    - role: ansible-role-packer
+      vars:
         packer_version: 1.2.5
-      }
 
 ```
 
