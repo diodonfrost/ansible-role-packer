@@ -3,5 +3,5 @@
   remote_user: root
   roles:
     - { role: ansible-role-packer,
-        vagrant_version: 1.2.5
+        packer_version: 1.2.5
       }
