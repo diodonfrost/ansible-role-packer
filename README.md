@@ -99,6 +99,9 @@ This role has multiple variables. The defaults for all these variables are the f
 # Possible values: https://releases.hashicorp.com/packer/index.json
 # Default: latest
 packer_version: latest
+
+# Packer destination path
+packer_path: /usr/local/bin/
 ```
 
 ## Dependencies
@@ -107,7 +110,7 @@ None
 
 ## Example Playbook
 
-This is a sample playbook file for deploying the Ansible Galaxy packer role in a localhost and installing latest packer version.
+This is a sample playbook file for deploying the Ansible Galaxy packer role in a localhost and installing the latest version of packer.
 
 ```yaml
 ---
@@ -134,7 +137,7 @@ This role can also install a specific version of packer.
 
 The preferred way of locally testing the role is to use Docker. You will have to install Docker on your system.
 
-You can also use packer and Virtualbox with packer to run tests locally. You will have to install Virtualbox and packer on your system. For all our tests we use test-kitchen.
+You can also use Virtualbox with kitchen-vagrant to run tests locally. You will have to install Virtualbox and packer on your system. For all our tests we use test-kitchen.
 
 Next install test-kitchen:
 
@@ -170,7 +173,7 @@ kitchen verify packer-latest-centos-7
 
 ```shell
 # Specify kitchen file on Linux
-export KITCHEN_YAML=.kitchen-packer.yml
+export KITCHEN_YAML=.kitchen-vagrant.yml
 
 # fast test on one machine
 kitchen test packer-latest-centos-7
@@ -178,7 +181,7 @@ kitchen test packer-latest-centos-7
 
 ### Testing on Windows with Virtualbox
 
-Windows can only be test with Virtualbox provider,do not use 'kitchen test' command for testing Windows environment. There 4 steps you will be using with test-kitchen as part of your workflow.
+Windows can only be test with Virtualbox provider, do not use 'kitchen test' command for testing Windows environment. There 4 steps you will be using with test-kitchen as part of your workflow.
 
 First of all we must set the kitchen file:
 ```shell
