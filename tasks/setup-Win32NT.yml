@@ -24,7 +24,7 @@
 - name: Windows | Download packer
   win_get_url:
     url: https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_windows_amd64.zip
-    dest: C:\tmp\packer_{{ packer_version }}_windows_amd64.zip
+    dest: '%TEMP%\packer_{{ packer_version }}_windows_amd64.zip'
   when:
     - packer_version not in packer_installed_version.stdout
 
@@ -35,7 +35,7 @@
 
 - name: Windows | Install packer
   win_unzip:
-    src: C:\tmp\packer_{{ packer_version }}_windows_amd64.zip
+    src: '%TEMP%\packer_{{ packer_version }}_windows_amd64.zip'
     dest: "{{ packer_path }}"
     creates: "{{ packer_path }}packer.exe"
   when:
