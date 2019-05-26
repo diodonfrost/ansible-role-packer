@@ -52,16 +52,16 @@ platforms:
     driver:
       box: archlinux/archlinux
       provision: true
-      Packerfiles:
-        - tests/Packer/Packer_archlinux_target.rb
+      vagrantfiles:
+        - tests/vagrant/vagrant_archlinux_target.rb
 
   # Gentoo
   - name: gentoo
     driver:
       box: generic/gentoo
       provision: true
-      Packerfiles:
-        - tests/Packer/Packer_gentoo_target.rb
+      vagrantfiles:
+        - tests/vagrant/vagrant_gentoo_target.rb
 
   # FreeBSD
   - name: freebsd-11.2
