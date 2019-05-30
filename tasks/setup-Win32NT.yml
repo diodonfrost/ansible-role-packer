@@ -25,8 +25,7 @@
   win_get_url:
     url: https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_windows_amd64.zip
     dest: '%TEMP%\packer_{{ packer_version }}_windows_amd64.zip'
-  when:
-    - packer_version not in packer_installed_version.stdout
+  when: packer_version not in packer_installed_version.stdout
 
 - name: Windows | Create packer folder
   win_file:
@@ -38,8 +37,7 @@
     src: '%TEMP%\packer_{{ packer_version }}_windows_amd64.zip'
     dest: "{{ packer_path }}"
     creates: "{{ packer_path }}packer.exe"
-  when:
-    - packer_version not in packer_installed_version.stdout
+  when: packer_version not in packer_installed_version.stdout
 
 - name: Windows | Add packer to PATH
   win_path:
