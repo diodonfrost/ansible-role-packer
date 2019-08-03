@@ -30,6 +30,9 @@ platforms:
 
   # Target Windows 2016 to test
   - name: windows-2k16
+    provisioner:
+      name: shell
+      command: echo "Skpping Provisioning"
     driver:
       box: diodonfrost/windows-2k16
       provision: true
