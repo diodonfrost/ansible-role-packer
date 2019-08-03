@@ -9,9 +9,14 @@
 
 - name: Windows | Finds the latest version of Packer when latest var is define
   set_fact:
-    packer_version: "{{ item }}"
+    packer_version_to_install: "{{ item }}"
   with_items: "{{ (packer_index.content | from_json).versions | list | sort | last }}"
   when: packer_version == 'latest'
+
+- name: Windows | Use the specified Packer version when latest var is not define
+  set_fact:
+    packer_version_to_install: "{{ packer_version }}"
+  when: packer_version != 'latest'
 
 # This task avoids downloading Packer every time
 - name: Windows | Check if packer is present on Windows with the right version
@@ -23,9 +28,9 @@
 
 - name: Windows | Download packer
   win_get_url:
-    url: https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_windows_amd64.zip
-    dest: '%TEMP%\packer_{{ packer_version }}_windows_amd64.zip'
-  when: packer_version not in packer_installed_version.stdout
+    url: https://releases.hashicorp.com/packer/{{ packer_version_to_install }}/packer_{{ packer_version_to_install }}_windows_amd64.zip
+    dest: '%TEMP%\packer_{{ packer_version_to_install }}_windows_amd64.zip'
+  when: packer_version_to_install not in packer_installed_version.stdout
 
 - name: Windows | Create packer folder
   win_file:
@@ -34,10 +39,10 @@
 
 - name: Windows | Install packer
   win_unzip:
-    src: '%TEMP%\packer_{{ packer_version }}_windows_amd64.zip'
+    src: '%TEMP%\packer_{{ packer_version_to_install }}_windows_amd64.zip'
     dest: "{{ packer_path }}"
     creates: "{{ packer_path }}packer.exe"
-  when: packer_version not in packer_installed_version.stdout
+  when: packer_version_to_install not in packer_installed_version.stdout
 
 - name: Windows | Add packer to PATH
   win_path:

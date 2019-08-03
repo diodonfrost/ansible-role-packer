@@ -9,9 +9,14 @@
 
 - name: OpenBSD | Finds the latest version of Packer when latest var is define
   set_fact:
-    packer_version: "{{ item }}"
+    packer_version_to_install: "{{ item }}"
   with_items: "{{ (packer_index.content | from_json).versions | list | sort | last }}"
   when: packer_version == 'latest'
+
+- name: OpenBSD | Use the specified Packer version when latest var is not define
+  set_fact:
+    packer_version_to_install: "{{ packer_version }}"
+  when: packer_version != 'latest'
 
 # This task avoids downloading Packer every time
 - name: OpenBSD | Check if Packer is present with the right version
@@ -23,7 +28,7 @@
 
 - name: OpenBSD | Install Packer
   unarchive:
-    src: "https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_openbsd_amd64.zip"
+    src: "https://releases.hashicorp.com/packer/{{ packer_version_to_install }}/packer_{{ packer_version_to_install }}_openbsd_amd64.zip"
     dest: "{{ packer_path }}"
     remote_src: yes
-  when: packer_version not in packer_installed_version.stdout | default('')
+  when: packer_version_to_install not in packer_installed_version.stdout | default('')
