@@ -9,6 +9,15 @@ env:
 #
 #-----------------------------------------------
   - distribution: centos
+    version: "8"
+    playbook: packer-latest
+  - distribution: centos
+    version: "8"
+    playbook: packer-1.2.5
+  - distribution: centos
+    version: "8"
+    playbook: packer-1.0.0
+  - distribution: centos
     version: "7"
     playbook: packer-latest
   - distribution: centos
