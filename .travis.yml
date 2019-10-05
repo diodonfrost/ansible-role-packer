@@ -42,6 +42,51 @@ env:
 #
 #--------------------------------
   - distribution: fedora
+    version: "32"
+    playbook: packer-latest
+  - distribution: fedora
+    version: "32"
+    playbook: packer-1.2.5
+  - distribution: fedora
+    version: "32"
+    playbook: packer-1.0.0 
+  - distribution: fedora
+    version: "31"
+    playbook: packer-latest
+  - distribution: fedora
+    version: "31"
+    playbook: packer-1.2.5
+  - distribution: fedora
+    version: "31"
+    playbook: packer-1.0.0
+  - distribution: fedora
+    version: "30"
+    playbook: packer-latest
+  - distribution: fedora
+    version: "30"
+    playbook: packer-1.2.5
+  - distribution: fedora
+    version: "30"
+    playbook: packer-1.0.0
+  - distribution: fedora
+    version: "29"
+    playbook: packer-latest
+  - distribution: fedora
+    version: "29"
+    playbook: packer-1.2.5
+  - distribution: fedora
+    version: "29"
+    playbook: packer-1.0.0
+  - distribution: fedora
+    version: "28"
+    playbook: packer-latest
+  - distribution: fedora
+    version: "28"
+    playbook: packer-1.2.5
+  - distribution: fedora
+    version: "28"
+    playbook: packer-1.0.0
+  - distribution: fedora
     version: "27"
     playbook: packer-latest
   - distribution: fedora
