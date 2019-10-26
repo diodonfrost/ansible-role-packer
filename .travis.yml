@@ -162,6 +162,14 @@ env:
 #
 #--------------------------------
   - distribution: debian
+    version: "10"
+    playbook: packer-latest
+  - distribution: debian
+    version: "10"
+    playbook: packer-1.2.5
+  - distribution: debian
+    version: "10"
+  - distribution: debian
     version: "9"
     playbook: packer-latest
   - distribution: debian
