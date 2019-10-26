@@ -169,6 +169,7 @@ env:
     playbook: packer-1.2.5
   - distribution: debian
     version: "10"
+    playbook: packer-1.0.0
   - distribution: debian
     version: "9"
     playbook: packer-latest
