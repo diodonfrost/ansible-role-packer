@@ -8,32 +8,23 @@ env:
 # CentOS
 #
 #-----------------------------------------------
-  - distribution: centos
-    version: "8"
+  - distribution: centos-8
     playbook: packer-latest
-  - distribution: centos
-    version: "8"
+  - distribution: centos-8
     playbook: packer-1.2.5
-  - distribution: centos
-    version: "8"
+  - distribution: centos-8
     playbook: packer-1.0.0
-  - distribution: centos
-    version: "7"
+  - distribution: centos-7
     playbook: packer-latest
-  - distribution: centos
-    version: "7"
+  - distribution: centos-7
     playbook: packer-1.2.5
-  - distribution: centos
-    version: "7"
+  - distribution: centos-7
     playbook: packer-1.0.0
-  - distribution: centos
-    version: "6"
+  - distribution: centos-6
     playbook: packer-latest
-  - distribution: centos
-    version: "6"
+  - distribution: centos-6
     playbook: packer-1.2.5
-  - distribution: centos
-    version: "6"
+  - distribution: centos-6
     playbook: packer-1.0.0
 
 #--------------------------------
@@ -41,68 +32,47 @@ env:
 # Fedora
 #
 #--------------------------------
-  - distribution: fedora
-    version: "32"
+  - distribution: fedora-32
     playbook: packer-latest
-  - distribution: fedora
-    version: "32"
+  - distribution: fedora-32
     playbook: packer-1.2.5
-  - distribution: fedora
-    version: "32"
+  - distribution: fedora-32
     playbook: packer-1.0.0 
-  - distribution: fedora
-    version: "31"
+  - distribution: fedora-31
     playbook: packer-latest
-  - distribution: fedora
-    version: "31"
+  - distribution: fedora-31
     playbook: packer-1.2.5
-  - distribution: fedora
-    version: "31"
+  - distribution: fedora-31
     playbook: packer-1.0.0
-  - distribution: fedora
-    version: "30"
+  - distribution: fedora-30
     playbook: packer-latest
-  - distribution: fedora
-    version: "30"
+  - distribution: fedora-30
     playbook: packer-1.2.5
-  - distribution: fedora
-    version: "30"
+  - distribution: fedora-30
     playbook: packer-1.0.0
-  - distribution: fedora
-    version: "29"
+  - distribution: fedora-29
     playbook: packer-latest
-  - distribution: fedora
-    version: "29"
+  - distribution: fedora-29
     playbook: packer-1.2.5
-  - distribution: fedora
-    version: "29"
+  - distribution: fedora-29
     playbook: packer-1.0.0
-  - distribution: fedora
-    version: "28"
+  - distribution: fedora-28
     playbook: packer-latest
-  - distribution: fedora
-    version: "28"
+  - distribution: fedora-28
     playbook: packer-1.2.5
-  - distribution: fedora
-    version: "28"
+  - distribution: fedora-28
     playbook: packer-1.0.0
-  - distribution: fedora
-    version: "27"
+  - distribution: fedora-27
     playbook: packer-latest
-  - distribution: fedora
-    version: "27"
+  - distribution: fedora-27
     playbook: packer-1.2.5
-  - distribution: fedora
-    version: "27"
+  - distribution: fedora-27
     playbook: packer-1.0.0
-  - distribution: fedora
-    version: "26"
+  - distribution: fedora-26
     playbook: packer-latest
-  - distribution: fedora
-    version: "26"
+  - distribution: fedora-26
     playbook: packer-1.2.5
-  - distribution: fedora
-    version: "26"
+  - distribution: fedora-26
     playbook: packer-1.0.0
 
 #--------------------------------
@@ -110,50 +80,35 @@ env:
 # Ubuntu
 #
 #--------------------------------
-  - distribution: ubuntu
-    version: "19.04"
+  - distribution: ubuntu-19.04
     playbook: packer-latest
-  - distribution: ubuntu
-    version: "19.04"
+  - distribution: ubuntu-19.04
     playbook: packer-1.2.5
-  - distribution: ubuntu
-    version: "19.04"
+  - distribution: ubuntu-19.04
     playbook: packer-1.0.0
-  - distribution: ubuntu
-    version: "18.04"
+  - distribution: ubuntu-18.04
     playbook: packer-latest
-  - distribution: ubuntu
-    version: "18.04"
+  - distribution: ubuntu-18.04
     playbook: packer-1.2.5
-  - distribution: ubuntu
-    version: "18.04"
+  - distribution: ubuntu-18.04
     playbook: packer-1.0.0
-  - distribution: ubuntu
-    version: "16.04"
+  - distribution: ubuntu-16.04
     playbook: packer-latest
-  - distribution: ubuntu
-    version: "16.04"
+  - distribution: ubuntu-16.04
     playbook: packer-1.2.5
-  - distribution: ubuntu
-    version: "16.04"
+  - distribution: ubuntu-16.04
     playbook: packer-1.0.0
-  - distribution: ubuntu
-    version: "14.04"
+  - distribution: ubuntu-14.04
     playbook: packer-latest
-  - distribution: ubuntu
-    version: "14.04"
+  - distribution: ubuntu-14.04
     playbook: packer-1.2.5
-  - distribution: ubuntu
-    version: "14.04"
+  - distribution: ubuntu-14.04
     playbook: packer-1.0.0
-  - distribution: ubuntu
-    version: "12.04"
+  - distribution: ubuntu-12.04
     playbook: packer-latest
-  - distribution: ubuntu
-    version: "12.04"
+  - distribution: ubuntu-12.04
     playbook: packer-1.2.5
-  - distribution: ubuntu
-    version: "12.04"
+  - distribution: ubuntu-12.04
     playbook: packer-1.0.0
 
 #--------------------------------
@@ -161,32 +116,23 @@ env:
 # Debian
 #
 #--------------------------------
-  - distribution: debian
-    version: "10"
+  - distribution: debian-10
     playbook: packer-latest
-  - distribution: debian
-    version: "10"
+  - distribution: debian-10
     playbook: packer-1.2.5
-  - distribution: debian
-    version: "10"
+  - distribution: debian-10
     playbook: packer-1.0.0
-  - distribution: debian
-    version: "9"
+  - distribution: debian-9
     playbook: packer-latest
-  - distribution: debian
-    version: "9"
+  - distribution: debian-9
     playbook: packer-1.2.5
-  - distribution: debian
-    version: "9"
+  - distribution: debian-9
     playbook: packer-1.0.0
-  - distribution: debian
-    version: "8"
+  - distribution: debian-8
     playbook: packer-latest
-  - distribution: debian
-    version: "8"
+  - distribution: debian-8
     playbook: packer-1.2.5
-  - distribution: debian
-    version: "8"
+  - distribution: debian-8
     playbook: packer-1.0.0
 
 #--------------------------------
@@ -194,23 +140,23 @@ env:
 # Oraclelinux
 #
 #--------------------------------
-  - distribution: oraclelinux
-    version: "7"
+  - distribution: oraclelinux-8
     playbook: packer-latest
-  - distribution: oraclelinux
-    version: "7"
+  - distribution: oraclelinux-8
     playbook: packer-1.2.5
-  - distribution: oraclelinux
-    version: "7"
+  - distribution: oraclelinux-8
     playbook: packer-1.0.0
-  - distribution: oraclelinux
-    version: "6"
+  - distribution: oraclelinux-7
     playbook: packer-latest
-  - distribution: oraclelinux
-    version: "6"
+  - distribution: oraclelinux-7
     playbook: packer-1.2.5
-  - distribution: oraclelinux
-    version: "6"
+  - distribution: oraclelinux-7
+    playbook: packer-1.0.0
+  - distribution: oraclelinux-6
+    playbook: packer-latest
+  - distribution: oraclelinux-6
+    playbook: packer-1.2.5
+  - distribution: oraclelinux-6
     playbook: packer-1.0.0
 
 #--------------------------------
@@ -218,23 +164,17 @@ env:
 # Amazonlinux
 #
 #--------------------------------
-  - distribution: amazonlinux
-    version: "2"
+  - distribution: amazonlinux-2
     playbook: packer-latest
-  - distribution: amazonlinux
-    version: "2"
+  - distribution: amazonlinux-2
     playbook: packer-1.2.5
-  - distribution: amazonlinux
-    version: "2"
+  - distribution: amazonlinux-2
     playbook: packer-1.0.0
-  - distribution: amazonlinux
-    version: "1"
+  - distribution: amazonlinux-1
     playbook: packer-latest
-  - distribution: amazonlinux
-    version: "1"
+  - distribution: amazonlinux-1
     playbook: packer-1.2.5
-  - distribution: amazonlinux
-    version: "1"
+  - distribution: amazonlinux-1
     playbook: packer-1.0.0
 
 #--------------------------------
@@ -242,32 +182,23 @@ env:
 # Opensuse
 #
 #--------------------------------
-  - distribution: opensuse
-    version: "15.1"
+  - distribution: opensuse-15.1
     playbook: packer-latest
-  - distribution: opensuse
-    version: "15.1"
+  - distribution: opensuse-15.1
     playbook: packer-1.2.5
-  - distribution: opensuse
-    version: "15.1"
+  - distribution: opensuse-15.1
     playbook: packer-1.0.0
-  - distribution: opensuse
-    version: "15"
+  - distribution: opensuse-15
     playbook: packer-latest
-  - distribution: opensuse
-    version: "15"
+  - distribution: opensuse-15
     playbook: packer-1.2.5
-  - distribution: opensuse
-    version: "15"
+  - distribution: opensuse-15
     playbook: packer-1.0.0
-  - distribution: opensuse
-    version: "42.3"
+  - distribution: opensuse-42.3
     playbook: packer-latest
-  - distribution: opensuse
-    version: "42.3"
+  - distribution: opensuse-42.3
     playbook: packer-1.2.5
-  - distribution: opensuse
-    version: "42.3"
+  - distribution: opensuse-42.3
     playbook: packer-1.0.0
 
 #--------------------------------
@@ -275,14 +206,11 @@ env:
 # Archlinux
 #
 #--------------------------------
-  - distribution: archlinux
-    version: "rolling"
+  - distribution: archlinux-rolling
     playbook: packer-latest
-  - distribution: archlinux
-    version: "rolling"
+  - distribution: archlinux-rolling
     playbook: packer-1.2.5
-  - distribution: archlinux
-    version: "rolling"
+  - distribution: archlinux-rolling
     playbook: packer-1.0.0
 
 #--------------------------------
@@ -290,14 +218,11 @@ env:
 # Alpine
 #
 #--------------------------------
-  - distribution: alpine
-    version: "rolling"
+  - distribution: alpine-rolling
     playbook: packer-latest
-  - distribution: alpine
-    version: "rolling"
+  - distribution: alpine-rolling
     playbook: packer-1.2.5
-  - distribution: alpine
-    version: "rolling"
+  - distribution: alpine-rolling
     playbook: packer-1.0.0
 
 #--------------------------------
@@ -305,25 +230,22 @@ env:
 # Gentoo
 #
 #--------------------------------
-  - distribution: gentoo
-    version: "stage3"
+  - distribution: gentoo-stage3
     playbook: packer-latest
-  - distribution: gentoo
-    version: "stage3"
+  - distribution: gentoo-stage3
     playbook: packer-1.2.5
-  - distribution: gentoo
-    version: "stage3"
+  - distribution: gentoo-stage3
     playbook: packer-1.0.0
 
 before_install:
   # Build docker container
-  - 'sudo docker pull diodonfrost/${distribution}-${version}-ansible:latest'
+  - 'sudo docker pull diodonfrost/${distribution}-ansible:latest'
 
 script:
   - container_id=$(mktemp)
 
   # Run container and mount ansible role with it
-  - 'sudo docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --volume="${PWD}":/etc/ansible/roles/ansible-role-packer:ro diodonfrost/${distribution}-${version}-ansible:latest > "${container_id}"'
+  - 'sudo docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --volume="${PWD}":/etc/ansible/roles/ansible-role-packer:ro diodonfrost/${distribution}-ansible:latest > "${container_id}"'
 
   # Check syntax
   - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-playbook -v /etc/ansible/roles/ansible-role-packer/tests/playbooks/${playbook}.yml --syntax-check'
