@@ -1,9 +1,7 @@
 ---
-# we use docker as plateform
 driver:
   name: vagrant
 
-# Ansible will be our provisioner
 provisioner:
   name: ansible_playbook
   hosts: localhost
@@ -12,13 +10,11 @@ provisioner:
   require_ansible_omnibus: false
   idempotency_test: true
 
-# We use Inspec as testing framework
 verifier:
   name: inspec
   inspec_tests:
     - path: tests/inspec
 
-# Build platforms
 platforms:
   # Standard Linux
   - name: centos-7
@@ -40,12 +36,6 @@ platforms:
   - name: oraclelinux-6
     driver:
       box: bento/oracle-6
-
-  # Archlinux
-  - name: opensuse-42.1
-    driver:
-      box: opensuse/openSUSE-42.1-x86_64
-      provision: true
 
   # Archlinux
   - name: archlinux-rolling
@@ -99,7 +89,6 @@ platforms:
     provisioner:
       name: ansible_playbook
       ansible_binary_path: /usr/local/bin/
-
   - name: macosx-10.11
     driver:
       box: jhcook/osx-elcapitan-10.11
