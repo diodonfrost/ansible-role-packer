@@ -103,8 +103,9 @@ This role has multiple variables. The defaults for all these variables are the f
 # Default: latest
 packer_version: latest
 
-# Packer destination path
-packer_path: /usr/local/bin/
+# Define where to install Packer binary
+# Default: use local system path defined in Ansible vars/*.yml
+packer_path: "{{ packer_default_path }}"
 ```
 
 ## Dependencies
