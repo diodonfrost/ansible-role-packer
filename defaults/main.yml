@@ -5,3 +5,7 @@
 # Possible values: https://releases.hashicorp.com/packer/index.json
 # Default: latest
 packer_version: latest
+
+# Define where to install Packer binary
+# Default: use local system path defined in Ansible vars/*.yml
+packer_path: "{{ packer_default_path }}"
