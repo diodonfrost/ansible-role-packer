@@ -1,0 +1,13 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+  - name: Windows | Packer should be functionnal
+    win_command: packer --version
+    register: packer_result
+
+  - name: Windows | Verify commands outputs
+    assert:
+      that:
+        - packer_result.rc == 0
+      success_msg: "All tests passed"

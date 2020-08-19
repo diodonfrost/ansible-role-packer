@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ansible-role-packer"
+      include_role:
+        name: "ansible-role-packer"
+      vars:
+        packer_version: "{{ ansible_env.packer_version | default('latest') }}"
