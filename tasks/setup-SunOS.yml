@@ -1,0 +1,34 @@
+---
+# tasks file for install Packer on SunOS system
+
+- name: SunOS | Find all versions of Packer
+  uri:
+    url: https://releases.hashicorp.com/packer/index.json
+    return_content: yes
+  register: packer_index
+
+- name: SunOS | Finds the latest version of Packer when latest var is define
+  set_fact:
+    packer_version_to_install: "{{ item }}"
+  with_items: "{{ (packer_index.content | from_json).versions | list | sort | last }}"
+  when: packer_version == 'latest'
+
+- name: SunOS | Use the specified Packer version when latest var is not define
+  set_fact:
+    packer_version_to_install: "{{ packer_version }}"
+  when: packer_version != 'latest'
+
+# This task avoids downloading Packer every time
+- name: SunOS | Check if Packer is present with the right version
+  command: "{{ packer_path }}/packer --version"
+  register: packer_installed_version
+  ignore_errors: yes
+  changed_when: false
+  failed_when: false
+
+- name: SunOS | Install Packer
+  unarchive:
+    src: "https://releases.hashicorp.com/packer/{{ packer_version_to_install }}/packer_{{ packer_version_to_install }}_solaris_amd64.zip"
+    dest: "{{ packer_path }}"
+    remote_src: yes
+  when: packer_version_to_install not in packer_installed_version.stdout | default('')
