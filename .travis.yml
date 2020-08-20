@@ -1,6 +1,11 @@
 ---
+dist: bionic
 services:
   - docker
+
+language: python
+python:
+  - "3.7"
 
 env:
 #-----------------------------------------------
@@ -9,23 +14,23 @@ env:
 #
 #-----------------------------------------------
   - distribution: centos-8
-    playbook: packer-latest
+    packer_version: latest
   - distribution: centos-8
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: centos-8
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: centos-7
-    playbook: packer-latest
+    packer_version: latest
   - distribution: centos-7
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: centos-7
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: centos-6
-    playbook: packer-latest
+    packer_version: latest
   - distribution: centos-6
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: centos-6
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
 
 #--------------------------------
 #
@@ -33,83 +38,83 @@ env:
 #
 #--------------------------------
   - distribution: fedora-32
-    playbook: packer-latest
+    packer_version: latest
   - distribution: fedora-32
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: fedora-32
-    playbook: packer-1.0.0 
+    packer_version: 1.0.0 
   - distribution: fedora-31
-    playbook: packer-latest
+    packer_version: latest
   - distribution: fedora-31
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: fedora-31
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: fedora-30
-    playbook: packer-latest
+    packer_version: latest
   - distribution: fedora-30
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: fedora-30
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: fedora-29
-    playbook: packer-latest
+    packer_version: latest
   - distribution: fedora-29
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: fedora-29
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: fedora-28
-    playbook: packer-latest
+    packer_version: latest
   - distribution: fedora-28
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: fedora-28
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: fedora-27
-    playbook: packer-latest
+    packer_version: latest
   - distribution: fedora-27
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: fedora-27
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: fedora-26
-    playbook: packer-latest
+    packer_version: latest
   - distribution: fedora-26
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: fedora-26
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
 
 #--------------------------------
 #
 # Ubuntu
 #
 #--------------------------------
-  - distribution: ubuntu-19.04
-    playbook: packer-latest
-  - distribution: ubuntu-19.04
-    playbook: packer-1.2.5
-  - distribution: ubuntu-19.04
-    playbook: packer-1.0.0
+  - distribution: ubuntu-20.04
+    packer_version: latest
+  - distribution: ubuntu-20.04
+    packer_version: 1.2.5
+  - distribution: ubuntu-20.04
+    packer_version: 1.0.0
   - distribution: ubuntu-18.04
-    playbook: packer-latest
+    packer_version: latest
   - distribution: ubuntu-18.04
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: ubuntu-18.04
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: ubuntu-16.04
-    playbook: packer-latest
+    packer_version: latest
   - distribution: ubuntu-16.04
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: ubuntu-16.04
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: ubuntu-14.04
-    playbook: packer-latest
+    packer_version: latest
   - distribution: ubuntu-14.04
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: ubuntu-14.04
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: ubuntu-12.04
-    playbook: packer-latest
+    packer_version: latest
   - distribution: ubuntu-12.04
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: ubuntu-12.04
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
 
 #--------------------------------
 #
@@ -117,23 +122,23 @@ env:
 #
 #--------------------------------
   - distribution: debian-10
-    playbook: packer-latest
+    packer_version: latest
   - distribution: debian-10
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: debian-10
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: debian-9
-    playbook: packer-latest
+    packer_version: latest
   - distribution: debian-9
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: debian-9
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: debian-8
-    playbook: packer-latest
+    packer_version: latest
   - distribution: debian-8
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: debian-8
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
 
 #--------------------------------
 #
@@ -141,23 +146,23 @@ env:
 #
 #--------------------------------
   - distribution: oraclelinux-8
-    playbook: packer-latest
+    packer_version: latest
   - distribution: oraclelinux-8
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: oraclelinux-8
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: oraclelinux-7
-    playbook: packer-latest
+    packer_version: latest
   - distribution: oraclelinux-7
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: oraclelinux-7
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: oraclelinux-6
-    playbook: packer-latest
+    packer_version: latest
   - distribution: oraclelinux-6
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: oraclelinux-6
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
 
 #--------------------------------
 #
@@ -165,17 +170,17 @@ env:
 #
 #--------------------------------
   - distribution: amazonlinux-2
-    playbook: packer-latest
+    packer_version: latest
   - distribution: amazonlinux-2
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: amazonlinux-2
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: amazonlinux-1
-    playbook: packer-latest
+    packer_version: latest
   - distribution: amazonlinux-1
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: amazonlinux-1
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
 
 #--------------------------------
 #
@@ -183,23 +188,23 @@ env:
 #
 #--------------------------------
   - distribution: opensuse-15.1
-    playbook: packer-latest
+    packer_version: latest
   - distribution: opensuse-15.1
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: opensuse-15.1
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: opensuse-15
-    playbook: packer-latest
+    packer_version: latest
   - distribution: opensuse-15
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: opensuse-15
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
   - distribution: opensuse-42.3
-    playbook: packer-latest
+    packer_version: latest
   - distribution: opensuse-42.3
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: opensuse-42.3
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
 
 #--------------------------------
 #
@@ -207,11 +212,11 @@ env:
 #
 #--------------------------------
   - distribution: archlinux-rolling
-    playbook: packer-latest
+    packer_version: latest
   - distribution: archlinux-rolling
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: archlinux-rolling
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
 
 #--------------------------------
 #
@@ -219,11 +224,11 @@ env:
 #
 #--------------------------------
   - distribution: alpine-rolling
-    playbook: packer-latest
+    packer_version: latest
   - distribution: alpine-rolling
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: alpine-rolling
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
 
 #--------------------------------
 #
@@ -231,40 +236,20 @@ env:
 #
 #--------------------------------
   - distribution: gentoo-stage3
-    playbook: packer-latest
+    packer_version: latest
   - distribution: gentoo-stage3
-    playbook: packer-1.2.5
+    packer_version: 1.2.5
   - distribution: gentoo-stage3
-    playbook: packer-1.0.0
+    packer_version: 1.0.0
 
 before_install:
-  # Build docker container
-  - 'sudo docker pull diodonfrost/${distribution}-ansible:latest'
+  - 'docker pull diodonfrost/${distribution}-ansible:latest'
+
+install:
+  - 'pip install molecule==3.0.6 docker==4.2.0 ansible==2.9.7'
 
 script:
-  - container_id=$(mktemp)
-
-  # Run container and mount ansible role with it
-  - 'sudo docker run --detach --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro --volume="${PWD}":/etc/ansible/roles/ansible-role-packer:ro diodonfrost/${distribution}-ansible:latest > "${container_id}"'
-
-  # Check syntax
-  - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-playbook -v /etc/ansible/roles/ansible-role-packer/tests/playbooks/${playbook}.yml --syntax-check'
-
-  # Run ansible playbook
-  - 'sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-playbook -v /etc/ansible/roles/ansible-role-packer/tests/playbooks/${playbook}.yml'
-
-  # Test indempotence
-  - >
-    sudo docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=1 ansible-playbook -v /etc/ansible/roles/ansible-role-packer/tests/playbooks/${playbook}.yml
-    | grep -q 'changed=0.*failed=0'
-    && (echo 'Idempotence test: pass' && exit 0)
-    || (echo 'Idempotence test: fail' && exit 1)
-
-  # Test role
-  - 'inspec exec tests/inspec --chef-license accept-silent -t docker://$(cat ${container_id})'
-
-  # Delete container
-  - 'sudo docker rm -f "$(cat ${container_id})"'
+  - 'distribution=${distribution} packer_version=${packer_version} molecule test'
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
