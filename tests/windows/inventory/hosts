@@ -1,2 +1,0 @@
-[windows-machines]
-172.28.128.11 ansible_connection=winrm ansible_user=vagrant ansible_password=vagrant ansible_winrm_server_cert_validation=ignore

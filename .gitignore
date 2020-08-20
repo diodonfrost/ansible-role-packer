@@ -1,4 +1,0 @@
-Gemfile.lock
-.kitchen
-tests/inspec/inspec.lock
-Dockerfile-kitchen*
