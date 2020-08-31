@@ -30,5 +30,6 @@
   unarchive:
     src: "https://releases.hashicorp.com/packer/{{ packer_version_to_install }}/packer_{{ packer_version_to_install }}_freebsd_amd64.zip"
     dest: "{{ packer_path }}"
+    mode: '0755'
     remote_src: yes
   when: packer_version_to_install not in packer_installed_version.stdout | default('')
