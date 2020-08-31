@@ -9,8 +9,7 @@
 
 - name: SunOS | Finds the latest version of Packer when latest var is define
   set_fact:
-    packer_version_to_install: "{{ item }}"
-  with_items: "{{ (packer_index.content | from_json).versions | list | sort | last }}"
+    packer_version_to_install: "{{ (packer_index.content | from_json).versions | list | sort_versions | last }}"
   when: packer_version == 'latest'
 
 - name: SunOS | Use the specified Packer version when latest var is not define
