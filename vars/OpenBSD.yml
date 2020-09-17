@@ -1,3 +1,4 @@
 ---
 # vars file for packer in OpenBSD system
 packer_default_path: /usr/local/bin/
+os_type: openbsd
