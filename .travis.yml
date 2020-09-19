@@ -187,23 +187,17 @@ env:
 # Opensuse
 #
 #--------------------------------
-  - distribution: opensuse-15.1
+  - distribution: opensuse-leap
     packer_version: latest
-  - distribution: opensuse-15.1
+  - distribution: opensuse-leap
     packer_version: 1.2.5
-  - distribution: opensuse-15.1
+  - distribution: opensuse-leap
     packer_version: 1.0.0
-  - distribution: opensuse-15
+  - distribution: opensuse-tumbleweed
     packer_version: latest
-  - distribution: opensuse-15
+  - distribution: opensuse-tumbleweed
     packer_version: 1.2.5
-  - distribution: opensuse-15
-    packer_version: 1.0.0
-  - distribution: opensuse-42.3
-    packer_version: latest
-  - distribution: opensuse-42.3
-    packer_version: 1.2.5
-  - distribution: opensuse-42.3
+  - distribution: opensuse-tumbleweed
     packer_version: 1.0.0
 
 #--------------------------------
