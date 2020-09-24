@@ -9,5 +9,3 @@ platforms:
     box_version: "3.0.18"
     memory: 1024
     cpus: 2
-    env:
-      packer_version: "${packer_version:-latest}"

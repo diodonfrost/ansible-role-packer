@@ -8,8 +8,6 @@ platforms:
     box: diodonfrost/${distribution:-windows-2k16}
     memory: 4096
     cpus: 2
-    env:
-      packer_version: "${packer_version:-latest}"
 provisioner:
   name: ansible
   playbooks:
