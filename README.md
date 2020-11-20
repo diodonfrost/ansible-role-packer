@@ -1,6 +1,5 @@
 # ansible-role-packer
 
-[![Build Status](https://travis-ci.com/diodonfrost/ansible-role-packer.svg?branch=master)](https://travis-ci.com/diodonfrost/ansible-role-packer)
 [![molecule](https://github.com/diodonfrost/ansible-role-packer/workflows/molecule/badge.svg)](https://github.com/diodonfrost/ansible-role-packer/actions)
 [![Ansible Galaxy](https://img.shields.io/badge/galaxy-diodonfrost.packer-660198.svg)](https://galaxy.ansible.com/diodonfrost/packer)
 
