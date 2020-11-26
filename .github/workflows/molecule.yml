@@ -62,5 +62,13 @@ jobs:
           pip install -r requirements.txt
 
       - name: Test Ansible role
-        run: |
-          image=${{ matrix.image }} packer_version=${{ matrix.packer_version }} molecule test
+        run: molecule test
+        env:
+          image: ${{ matrix.image }}
+          packer_version: ${{ matrix.packer_version }}
+
+      - name: Test Ansible role with check_mode enable
+        run: molecule check
+        env:
+          image: ${{ matrix.image }}
+          packer_version: ${{ matrix.packer_version }}
