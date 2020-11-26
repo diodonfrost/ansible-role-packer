@@ -6,6 +6,7 @@
     url: https://releases.hashicorp.com/packer/index.json
     return_content: yes
   register: packer_index
+  check_mode: no
   when: packer_version == 'latest'
 
 - name: Linux/Unix | Finds the latest version of Packer when latest var is define
