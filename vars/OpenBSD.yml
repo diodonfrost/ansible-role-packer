@@ -1,4 +1,5 @@
 ---
 # vars file for packer in OpenBSD system
+packer_pkg_url: "https://releases.hashicorp.com/packer/{{ packer_version_to_install }}/packer_{{ packer_version_to_install }}_{{ os_type }}_amd64.zip"
 packer_default_path: /usr/local/bin/
 os_type: openbsd

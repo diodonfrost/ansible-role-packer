@@ -29,7 +29,7 @@
 
 - name: Linux/Unix | Install Packer
   unarchive:
-    src: "https://releases.hashicorp.com/packer/{{ packer_version_to_install }}/packer_{{ packer_version_to_install }}_{{ os_type }}_amd64.zip"
+    src: "{{ packer_pkg_url }}"
     dest: "{{ packer_path }}"
     mode: '0755'
     remote_src: yes
