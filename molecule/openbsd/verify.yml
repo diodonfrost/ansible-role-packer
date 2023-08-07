@@ -2,13 +2,21 @@
 - name: Verify
   hosts: all
   tasks:
-  - name: OpenBSD | Packer should be functionnal
-    command: packer --version
-    ignore_errors: yes
-    register: packer_result
+    - name: OpenBSD | Packer should be functionnal
+      command: packer --version
+      register: packer_result
 
-  - name: OpenBSD | Verify commands outputs
-    assert:
-      that:
-        - packer_result.rc == 0
-      success_msg: "All tests passed"
+    - name: OpenBSD | Verify commands outputs
+      assert:
+        that:
+          - packer_result.rc == 0
+        success_msg: "All tests passed"
+      when: lookup('env', 'packer_version') == "latest"
+
+    - name: OpenBSD | Verify commands outputs
+      assert:
+        that:
+          - packer_result.rc == 0
+          - lookup('env', 'packer_version') in packer_result.stdout
+        success_msg: "All tests passed"
+      when: lookup('env', 'packer_version') != "latest"

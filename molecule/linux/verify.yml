@@ -2,18 +2,18 @@
 - name: Verify
   hosts: all
   tasks:
-    - name: FreeBSD | Packer should be functionnal
+    - name: Linux | Packer should be functionnal
       command: packer --version
       register: packer_result
 
-    - name: FreeBSD | Verify commands outputs
+    - name: Linux | Verify commands outputs
       assert:
         that:
           - packer_result.rc == 0
         success_msg: "All tests passed"
       when: lookup('env', 'packer_version') == "latest"
 
-    - name: FreeBSD | Verify commands outputs
+    - name: Linux | Verify commands outputs
       assert:
         that:
           - packer_result.rc == 0

@@ -2,12 +2,21 @@
 - name: Verify
   hosts: all
   tasks:
-  - name: Windows | Packer should be functionnal
-    win_command: packer --version
-    register: packer_result
+    - name: Windows | packer should be functionnal
+      win_command: packer --version
+      register: packer_result
 
-  - name: Windows | Verify commands outputs
-    assert:
-      that:
-        - packer_result.rc == 0
-      success_msg: "All tests passed"
+    - name: Windows | Verify commands outputs
+      assert:
+        that:
+          - packer_result.rc == 0
+        success_msg: "All tests passed"
+      when: lookup('env', 'packer_version') == "latest"
+
+    - name: Windows | Verify commands outputs
+      assert:
+        that:
+          - packer_result.rc == 0
+          - lookup('env', 'packer_version') in packer_result.stdout
+        success_msg: "All tests passed"
+      when: lookup('env', 'packer_version') != "latest"
