@@ -11,18 +11,18 @@
 
 - name: Windows | Finds the latest version of Packer when latest var is define
   ansible.builtin.set_fact:
-    packer_version_to_install: "{{ (packer_index.content | from_json).versions | list | sort_versions | last }}"
+    __packer_version: "{{ (packer_index.content | from_json).versions | list | sort_versions | last }}"
   when: packer_version == 'latest'
 
 - name: Windows | Use the specified Packer version when latest var is not define
   ansible.builtin.set_fact:
-    packer_version_to_install: "{{ packer_version }}"
+    __packer_version: "{{ packer_version }}"
   when: packer_version != 'latest'
 
 # This task avoids downloading Packer every time
 - name: Windows | Check if packer is present on Windows with the right version
   ansible.windows.win_shell: packer --version
-  register: packer_installed_version
+  register: __packer_installed_version
   ignore_errors: true
   changed_when: false
   failed_when: false
@@ -30,8 +30,8 @@
 - name: Windows | Download packer
   ansible.windows.win_get_url:
     url: "{{ packer_pkg_url }}"
-    dest: '%TEMP%\packer_{{ packer_version_to_install }}_windows_amd64.zip'
-  when: packer_version_to_install not in packer_installed_version.stdout
+    dest: '%TEMP%\packer_{{ __packer_version }}_windows_amd64.zip'
+  when: __packer_version not in __packer_installed_version.stdout
 
 - name: Windows | Create packer folder
   ansible.windows.win_file:
@@ -40,10 +40,10 @@
 
 - name: Windows | Install packer
   community.windows.win_unzip:
-    src: '%TEMP%\packer_{{ packer_version_to_install }}_windows_amd64.zip'
+    src: '%TEMP%\packer_{{ __packer_version }}_windows_amd64.zip'
     dest: "{{ packer_path }}"
     creates: "{{ packer_path }}packer.exe"
-  when: packer_version_to_install not in packer_installed_version.stdout
+  when: __packer_version not in __packer_installed_version.stdout
 
 - name: Windows | Add packer to PATH
   ansible.windows.win_path:

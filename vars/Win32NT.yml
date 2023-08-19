@@ -1,5 +1,4 @@
 ---
 # vars file for packer in Windows system
-packer_pkg_url: https://releases.hashicorp.com/packer/{{ packer_version_to_install }}/packer_{{ packer_version_to_install }}_{{ os_type }}_amd64.zip
-packer_default_path: C:\HashiCorp\Packer\bin\
-os_type: windows
+__packer_pkg_url: https://releases.hashicorp.com/packer/{{ __packer_version }}/packer_{{ __packer_version }}_windows_amd64.zip
+__packer_path: C:\HashiCorp\Packer\bin\

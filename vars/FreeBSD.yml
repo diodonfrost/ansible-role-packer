@@ -1,5 +1,4 @@
 ---
 # vars file for packer in FreeBSD system
-packer_pkg_url: "https://releases.hashicorp.com/packer/{{ packer_version_to_install }}/packer_{{ packer_version_to_install }}_{{ os_type }}_{{ base_arch[ansible_architecture] | default('amd64') }}.zip"
-packer_default_path: /usr/local/bin/
-os_type: freebsd
+__packer_pkg_url: "https://releases.hashicorp.com/packer/{{ __packer_version }}/packer_{{ __packer_version }}_freebsd_{{ base_arch[ansible_architecture] | default('amd64') }}.zip"
+__packer_path: /usr/local/bin/
