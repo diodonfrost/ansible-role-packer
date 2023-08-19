@@ -2,7 +2,7 @@
 # tasks file for install Packer on Linux/Unix system
 
 - name: Linux/Unix | Find all versions of Packer
-  uri:
+  ansible.builtin.uri:
     url: https://releases.hashicorp.com/packer/index.json
     return_content: yes
   register: packer_index
@@ -10,25 +10,25 @@
   when: packer_version == 'latest'
 
 - name: Linux/Unix | Finds the latest version of Packer when latest var is define
-  set_fact:
+  ansible.builtin.set_fact:
     packer_version_to_install: "{{ (packer_index.content | from_json).versions | list | sort_versions | last }}"
   when: packer_version == 'latest'
 
 - name: Linux/Unix | Use the specified Packer version when latest var is not define
-  set_fact:
+  ansible.builtin.set_fact:
     packer_version_to_install: "{{ packer_version }}"
   when: packer_version != 'latest'
 
 # This task avoids downloading Packer every time
 - name: Linux/Unix | Check if Packer is present with the right version
-  command: "{{ packer_path }}/packer --version"
+  ansible.builtin.command: "{{ packer_path }}/packer --version"
   register: packer_installed_version
-  ignore_errors: yes
+  ignore_errors: true
   changed_when: false
   failed_when: false
 
 - name: Linux/Unix | Install Packer
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ packer_pkg_url }}"
     dest: "{{ packer_path }}"
     mode: '0755'
