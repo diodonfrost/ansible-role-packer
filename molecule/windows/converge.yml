@@ -1,10 +1,5 @@
 ---
 - name: Converge
   hosts: all
-  become: true
-  tasks:
-    - name: "Include ansible-role-packer"
-      ansible.builtin.include_role:
-        name: "ansible-role-packer"
-      vars:
-        packer_version: "{{ lookup('env', 'packer_version') | default('latest', true) }}"
+  roles:
+    - role: diodonfrost.packer
