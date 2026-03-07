@@ -1,0 +1,15 @@
+---
+# tasks file for installing Packer plugins on Windows system
+
+- name: Windows | List Packer plugins
+  ansible.windows.win_command: packer plugin installed
+  ignore_errors: true
+  changed_when: false
+  failed_when: false
+  register: packer_plugin_result
+  check_mode: false
+
+- name: Windows | Install Packer plugins
+  ansible.windows.win_command: "packer plugins install {{ item }}"
+  loop: "{{ packer_plugins }}"
+  when: (item | split('/') | last) not in packer_plugin_result.stdout

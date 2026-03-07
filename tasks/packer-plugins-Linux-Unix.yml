@@ -1,0 +1,8 @@
+---
+# tasks file for installing Packer plugins on Linux/Unix system
+
+- name: Linux | Install Packer plugins
+  ansible.builtin.command: "packer plugins install {{ item }}"
+  args:
+    creates: "~/.config/packer/plugins/{{ item }}/"
+  loop: "{{ packer_plugins }}"
