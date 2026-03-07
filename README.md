@@ -7,8 +7,10 @@ This role provide a compliance for install packer on your target host.
 
 ## Requirements
 
-This role was developed using Ansible 2.8 Backwards compatibility is not guaranteed.
+This role was developed using Ansible 2.9. Backwards compatibility is not guaranteed.
 Use `ansible-galaxy install diodonfrost.packer` to install the role on your system.
+
+Elevated privileges (`become: true`) are required on Linux/Unix systems as Packer is installed in `/usr/local/bin/`.
 
 
 ## Role Variables
