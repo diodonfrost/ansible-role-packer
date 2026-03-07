@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: diodonfrost.packer
+      packer_version: "{{ lookup('env', 'packer_version') | default('latest', true) }}"
+      packer_plugins:
+        - "github.com/hashicorp/docker"
+        - "github.com/hashicorp/ansible"
