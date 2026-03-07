@@ -4,9 +4,9 @@
 - name: Linux/Unix | Find all versions of Packer
   ansible.builtin.uri:
     url: https://releases.hashicorp.com/packer/index.json
-    return_content: yes
+    return_content: true
   register: packer_index
-  check_mode: no
+  check_mode: false
   when: packer_version == 'latest'
 
 - name: Linux/Unix | Finds the latest version of Packer when latest var is define
@@ -32,5 +32,5 @@
     src: "{{ packer_pkg_url }}"
     dest: "{{ packer_path }}"
     mode: '0755'
-    remote_src: yes
+    remote_src: true
   when: __packer_version not in __packer_installed_version.stdout | default('')
