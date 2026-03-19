@@ -1,4 +1,4 @@
 ---
 # vars file for packer in Solaris system
-__packer_pkg_url: "https://releases.hashicorp.com/packer/{{ __packer_version }}/packer_{{ __packer_version }}_solaris_amd64.zip"
-__packer_path: /usr/sbin
+_packer_pkg_url: "https://releases.hashicorp.com/packer/{{ _packer_version }}/packer_{{ _packer_version }}_solaris_amd64.zip"
+_packer_path: /usr/sbin

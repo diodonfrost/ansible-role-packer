@@ -5,7 +5,7 @@
   ansible.builtin.include_vars: "{{ ansible_facts['system'] }}.yml"
 
 - name: Install Packer
-  ansible.builtin.include_tasks: "setup-{{ base_os[ansible_facts['system']] | default('Linux-Unix') }}.yml"
+  ansible.builtin.include_tasks: "setup-{{ _base_os[ansible_facts['system']] | default('Linux-Unix') }}.yml"
 
 - name: Install Packer plugins
-  ansible.builtin.include_tasks: "packer-plugins-{{ base_os[ansible_facts['system']] | default('Linux-Unix') }}.yml"
+  ansible.builtin.include_tasks: "packer-plugins-{{ _base_os[ansible_facts['system']] | default('Linux-Unix') }}.yml"

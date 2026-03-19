@@ -1,4 +1,4 @@
 ---
 # vars file for packer in Mac osx system
-__packer_pkg_url: "https://releases.hashicorp.com/packer/{{ __packer_version }}/packer_{{ __packer_version }}_darwin_{{ base_arch[ansible_facts['architecture']] | default('arm64') }}.zip"
-__packer_path: /usr/local/bin/
+_packer_pkg_url: "https://releases.hashicorp.com/packer/{{ _packer_version }}/packer_{{ _packer_version }}_darwin_{{ _base_arch[ansible_facts['architecture']] | default('arm64') }}.zip"
+_packer_path: /usr/local/bin/
