@@ -41,6 +41,14 @@ packer_path: "{{ _packer_path }}"
 #     - "github.com/hashicorp/ansible"
 #     - "github.com/hashicorp/qemu"
 packer_plugins: []
+
+# Enable SHA256 checksum verification of the downloaded archive
+# Default: true
+packer_checksum_verify: true
+
+# Define the URL of the SHA256SUMS file used to verify the downloaded archive
+# Default: use the URL defined in Ansible vars/main.yml
+packer_checksum_url: "{{ _packer_checksum_url }}"
 ```
 
 ## Dependencies

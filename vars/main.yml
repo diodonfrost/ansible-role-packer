@@ -15,3 +15,5 @@ _base_os:
   Solaris: 'Linux-Unix'
   Darwin: 'Linux-Unix'
   Win32NT: 'Windows'
+
+_packer_checksum_url: "https://releases.hashicorp.com/packer/{{ _packer_version }}/packer_{{ _packer_version }}_SHA256SUMS"
