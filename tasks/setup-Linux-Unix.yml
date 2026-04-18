@@ -33,6 +33,7 @@
     dest: "/tmp/packer_{{ _packer_version }}_linux_{{ _base_arch[ansible_facts['architecture']] | default('amd64') }}.zip"
     checksum: "{{ ('sha256:' + packer_checksum_url) if packer_checksum_verify else omit }}"
     mode: '0644'
+  check_mode: false
   when: _packer_version not in _packer_installed_version.stdout | default('')
 
 - name: Linux/Unix | Install Packer

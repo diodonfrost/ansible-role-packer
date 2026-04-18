@@ -33,6 +33,7 @@
     dest: '%TEMP%\packer_{{ _packer_version }}_windows_amd64.zip'
     checksum_url: "{{ packer_checksum_url if packer_checksum_verify else omit }}"
     checksum_algorithm: "{{ 'sha256' if packer_checksum_verify else omit }}"
+  check_mode: false
   when: _packer_version not in _packer_installed_version.stdout
 
 - name: Windows | Create packer folder
